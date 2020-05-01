@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Button, Image } from "react-native";
 
 import BodyText from "../components/BodyText";
 import TitleText from "../components/TitleText";
+import MainButton from "../components/MainButton";
 
 const GameOverScreen = (props) => {
   return (
@@ -10,6 +11,7 @@ const GameOverScreen = (props) => {
       <TitleText>The game is over.</TitleText>
       <View style={styles.imageContainer}>
         <Image
+          fadeDuration={1000}
           source={require("../assets/success.png")}
           style={styles.image}
           resizeMode="cover"
@@ -17,7 +19,7 @@ const GameOverScreen = (props) => {
       </View>
       <BodyText>Number of rounds: {props.roundsNumber}</BodyText>
       <BodyText>Number was: {props.userNumber}</BodyText>
-      <Button title="NEW GAME" onPress={props.onRestart}></Button>
+      <MainButton onPress={props.onRestart}>NEW GAME</MainButton>
     </View>
   );
 };
